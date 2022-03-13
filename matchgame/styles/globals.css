@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -13,4 +17,30 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.flip-content {
+  transition: transform 0.4s;
+  transform-style: preserve-3d;
+  opacity: 1;
+}
+.flip-item  {
+  transform: rotateY(180deg);
+  transition: transform 0.3s;
+}
+.item-hidden  {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s ease-in, opacity 0.5s ease-in;
+}
+.flip-front, .flip-back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  backface-visibility: hidden;  
+  color: #fff;  
+  background-color: lightseagreen;
+}
+.flip-back {
+  transform: rotateY(180deg);
 }
